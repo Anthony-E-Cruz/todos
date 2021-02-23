@@ -1,0 +1,15 @@
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.todos-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-input {
+  border: 2px solid black;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { BsFillPersonFill, BsFillLockFill } from "react-icons/bs";
 
 const Login = () => {
 
@@ -15,7 +16,6 @@ const Login = () => {
     if ((email.split(".").length !== 2 || email.split("@").length !== 2) && email.length !== 0) {
       setValidEmail(false)
       setEmailError("invalid email")
-      console.log(emailError)
     } else {
       setEmailError(null)
       setEmailError(null)
@@ -53,23 +53,36 @@ const Login = () => {
 
   return (
     <div className="form-container">
-      <h1>Rapptr Labs</h1>
+      <h1 className="login-page-title">Rapptr Labs</h1>
       <div className="login-form">
-        <p>Email</p>
-        <input type="text"
-          name="Email"
-          placeholder="user@rapptrlabs.com"
-          onChange={event => validateEmail(event.target.value)}
-          className="email-input" />
-        <p>{emailError}</p>
-        <p>Password</p>
-        <input type="text"
-          name="password"
-          placeholder="Must be at least 4 characters"
-          onChange={event => validatePassword(event.target.value)}
-          className="email-input" />
-        <button onClick={handleSubmit}>Login</button>
-        <p>{passwordError}</p>
+        <div className="input-label">
+          <p>Email</p>
+        </div>
+        <div className="input-container">
+          <BsFillPersonFill />
+          <input type="text"
+            className="email-input"
+            name="Email"
+            placeholder="user@rapptrlabs.com"
+            onChange={event => validateEmail(event.target.value)}
+            className="email-input" />
+        </div>
+        <p className="error">{emailError}</p>
+        <div className="input-label">
+          <p>Password</p>
+        </div>
+        <div className="input-container">
+          <BsFillLockFill />
+          <input type="text"
+            className="password-input"
+            name="password"
+            placeholder="Must be at least 4 characters"
+            onChange={event => validatePassword(event.target.value)}
+            className="email-input" />
+        </div>
+        <br />
+        <button className="submit-bttn" onClick={handleSubmit}>Submit</button>
+        <p className="error">{passwordError}</p>
       </div>
       {loginError}
     </div>

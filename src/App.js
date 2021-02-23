@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './mintbean.png';
 import './styles/index.css';
+import './styles/reset.css';
+import './styles/todos.css';
 import Login from './pages/login'
 import Todo from './pages/todo'
 import {
@@ -15,13 +17,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-
         <Switch>
-          <Route path="/">
-            <Login />
-          </Route>
           <Route path="/dashboard">
             <Todo />
+          </Route>
+          <Route path="/">
+            <Login />
           </Route>
         </Switch>
       </Router>
