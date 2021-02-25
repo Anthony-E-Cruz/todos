@@ -1,6 +1,4 @@
 ## Rapptr Todos App
-#
-rapptr todos app 
 
 Rapptr Todos is a `react app` that allows `rapptr users` to `mangage their todo list`.
 
