@@ -1,28 +1,34 @@
-import React from 'react';
-import logo from './mintbean.png';
+import React, { useState } from 'react'
 import './styles/index.css';
 import './styles/reset.css';
 import './styles/todos.css';
+import './styles/login.css';
 import Login from './pages/login'
-import Todo from './pages/todo'
+import ProtectedRoute from './components/protectedroute'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
-function App() {
+function App({ user }) {
+  const [authenticated, setAuthenticated] = useState(false);
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/dashboard">
-            <Todo />
-          </Route>
-          <Route path="/">
-            <Login />
+          <ProtectedRoute
+            path="/dashboard"
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}>
+          </ProtectedRoute>
+          <Route
+            path="/login"
+            authenticated={authenticated}
+            setAuthenticated={setAuthenticated}>
+            <Login authenticated={authenticated}
+              setAuthenticated={setAuthenticated} />
           </Route>
         </Switch>
       </Router>
