@@ -54,13 +54,7 @@ const Todo = (data) => {
   }
 
   return (
-    // <div className="todo-outer-container">
-    /* <div><p>{title}</p></div>
-    <div><FaPencilAlt onClick={toggleEdit} /><FaTrash onClick={deleteTodo} /></div>
-    <br />
-    {editTodo()} */
     todo()
-    // </div>
   )
 }
 

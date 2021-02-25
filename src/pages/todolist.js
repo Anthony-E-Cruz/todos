@@ -82,7 +82,6 @@ const DashBoard = (data) => {
   }
 
   const handleChange = (e) => {
-    // e.preventDefault;
     setSearchTodo(e.currentTarget.value)
     if (e.currentTarget.value.length > 25) {
       setNewTodoError("Character limit exceeded")
@@ -166,4 +165,3 @@ const DashBoard = (data) => {
 }
 
 export default DashBoard
-
